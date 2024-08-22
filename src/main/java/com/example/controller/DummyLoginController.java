@@ -22,8 +22,9 @@ public class DummyLoginController {
     * */
     @PostMapping("/login")
     @ResponseBody
-    public ResponseEntity<String> loginPage(@RequestParam("user") String user){
-        if(dummyLoginService.validateUser(user))
+    public ResponseEntity<String> loginPage(@RequestParam("user") String user,
+                                            @RequestParam("password") String password){
+        if(dummyLoginService.validateUser(user, password))
             return ResponseEntity.ok("Login Successful");
 
         return ResponseEntity.status(HttpStatusCode.valueOf(401)).body("Login Unsuccessful");

@@ -9,9 +9,11 @@ public class DummyLoginService {
     @Autowired
     DummyDb dummyDb;
 
-    public boolean validateUser(String user){
-        if(dummyDb.getDb().containsKey(user))
-            return true;
+    public boolean validateUser(String user, String password){
+        if(dummyDb.getDb().containsKey(user)) {
+            if(dummyDb.getDb().get(user).equals(password))
+                return true;
+        }
 
         return false;
     }
