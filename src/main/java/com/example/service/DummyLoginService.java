@@ -1,20 +1,23 @@
 package com.example.service;
 
+import com.example.config.Configuration;
 import com.example.dummydb.DummyDb;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DummyLoginService {
-    @Autowired
-    DummyDb dummyDb;
+//    @Autowired
+//    Configuration configuration;
 
-    public boolean validateUser(String user, String password){
-        if(dummyDb.getDb().containsKey(user)) {
-            if(dummyDb.getDb().get(user).equals(password))
-                return true;
+    public ResponseEntity<String> validateUser(String user, String password){
+        if(Configuration.getDb().containsKey(user)) {
+            if(Configuration.getDb().get(user).equals(password))
+                return ResponseEntity.ok("Login Successful");
         }
 
-        return false;
+        return ResponseEntity.status(HttpStatusCode.valueOf(401)).body("Login Unsuccessful");
     }
 }
