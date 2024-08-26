@@ -1,0 +1,58 @@
+# swagger-ui custom path
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+#jasypt:
+#  encryptor:
+#    algorithm: PBEWithMD5AndDES
+#    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+
+app:
+#  userMap:
+#    user: "ENC(2m1OYeVuB0jG3gVX/tJkPJ0O/2cE6dwatl+VhMOUAsdKIe56MS9SSH6ngmfn/9u3)"
+#    admin: "ENC(Qg5Sh/zpItt1MevUIUVakw==)"
+#    guest: "ENC(Qg5Sh/zpItt1MevUIUVakw==)"
+  key: "10"
+  productCategory:
+    Electronics: "Tv, Mobile, Gaming Console"
+    Shoes: "Sports Shoes, Casual Shoes"
+
+  productMap:
+#    Electronics
+    Tv:
+      - name: LG
+        price: 50000
+      - name: Sony
+        price: 95000
+      - name: Samsung
+        price: 65000
+    Mobile:
+      - name: Apple
+        price: 60000
+      - name: Samsung
+        price: 50000
+      - name: Google
+        price: 52000
+      - name: OnePlus
+        price: 45000
+    GamingConsole:
+      - name: PlayStation
+        price: 50000
+      - name: XBox
+        price: 48000
+#   Shoes
+    SportsShoes:
+      - name: Nike
+        price: 5000
+      - name: Adidas
+        price: 4500
+      - name: Puma
+        price: 4000
+    CasualShoes:
+      - name: Addidas Originals
+        price: 10000
+      - name: Nike Airforce
+        price: 12000
+      - name: Puma Motorsport
+        price: 8000
