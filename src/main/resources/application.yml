@@ -14,45 +14,98 @@ app:
 #    admin: "ENC(Qg5Sh/zpItt1MevUIUVakw==)"
 #    guest: "ENC(Qg5Sh/zpItt1MevUIUVakw==)"
   key: "10"
+
+  discountMap:
+    NEW_ARRIVALS: 5
+    STOCK_CLEARING: 50
+    FESTIVE_SALE: 30
+
   productCategory:
-    Electronics: "Tv, Mobile, Gaming Console"
-    Shoes: "Sports Shoes, Casual Shoes"
+#    Category: SubCategory
+    Electronics: "Tv, Mobile, Gaming Console, Washing Machine, Microwave, Refrigerator"
+    Shoes: "Sports Shoes, Casual Shoes, Formal Shoes"
+    Sports: "Cricket, Football, Basketball, Volleyball, Table Tennis, Badminton, Snooker"
 
   productMap:
 #    Electronics
     Tv:
       - name: LG
         price: 50000
+        description: Television
       - name: Sony
         price: 95000
+        description: Television
       - name: Samsung
         price: 65000
+        description: Television
+      - name: OnePlus
+        price: 60000
+        description: Television
+      - name: MI
+        price: 40000
+        description: Television
+      - name: Panasonic
+        price: 45000
+        description: Television
     Mobile:
       - name: Apple
         price: 60000
+        description: Mobile Phone
       - name: Samsung
         price: 50000
+        description: Mobile Phone
       - name: Google
         price: 52000
+        description: Mobile Phone
       - name: OnePlus
         price: 45000
+        description: Mobile Phone
+      - name: Nokia
+        price: 35000
+        description: Mobile Phone
+      - name: MI
+        price: 25000
+        description: Mobile Phone
+      - name: Oppo
+        price: 22000
+        description: Mobile Phone
+      - name: Vivo
+        price: 18000
+        description: Mobile Phone
     GamingConsole:
       - name: PlayStation
         price: 50000
+        description: Gaming Setup
       - name: XBox
         price: 48000
+        description: Gaming Setup
+      - name: Nintendo
+        price: 30000
+        description: Gaming Setup
 #   Shoes
     SportsShoes:
       - name: Nike
         price: 5000
+        description: Footwear
       - name: Adidas
         price: 4500
+        description: Footwear
       - name: Puma
         price: 4000
+        description: Footwear
+      - name: Asics
+        price: 45000
+        description: Footwear
+      - name: Under Armour
+        price: 8000
+        description: Footwear
     CasualShoes:
       - name: Addidas Originals
         price: 10000
+        description: Footwear
       - name: Nike Airforce
         price: 12000
+        description: Footwear
       - name: Puma Motorsport
         price: 8000
+        description: Footwear

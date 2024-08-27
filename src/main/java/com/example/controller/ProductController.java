@@ -9,18 +9,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
-import java.util.Map;
 
 @RestController
 public class ProductController {
     @Autowired
     ProductService productService;
 
-    @Operation(summary = "Get category and subcategories for all available products", description = "Simple get operation")
+    @Operation(summary = "Get category for all available products", description = "Simple get operation")
     @GetMapping("/getProductCategory")
-    public ResponseEntity<Map<String, List<String>>> getProductCategory(){
+    public ResponseEntity<List<String>> getProductCategory(){
         return productService.getProductCategory();
+    }
+
+    @Operation(summary = "Get subcategory for all available products", description = "Simple get operation")
+    @PostMapping("/getProductSubCategory")
+    public ResponseEntity<List<String>> getProductSubCategory(@RequestParam("category") String category){
+        return productService.getProductSubCategory(category);
     }
 
     @Operation(summary = "Get product name and price", description = "Pass product subcategory and get product list")

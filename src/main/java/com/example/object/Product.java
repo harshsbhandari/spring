@@ -8,4 +8,5 @@ import lombok.Setter;
 public class Product {
     private String name;
     private Integer price;
+    private String description;
 }
