@@ -11,9 +11,9 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-@ConfigurationProperties(prefix = "app")
 @Setter
 @Getter
+@ConfigurationProperties(prefix = "app")
 public class ConfigurationFile {
 //    private Map<String, String> userMap;
 
@@ -23,6 +23,6 @@ public class ConfigurationFile {
 
     private Map<String, List<Product>> productMap;
 
-    private Map<DiscountType, Integer> discountMap;
+    private Map<DiscountType, String> discountMap;
 
 }

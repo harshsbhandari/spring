@@ -12,5 +12,5 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Discount {
     DiscountType discountType;
-    Integer discountPercent;
+    String category;
 }

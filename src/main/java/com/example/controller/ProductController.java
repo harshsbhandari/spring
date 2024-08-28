@@ -17,19 +17,19 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-    @Operation(summary = "Get category for all available products", description = "Simple get operation")
+    @Operation(summary = "Category list", description = "Get category for all available products")
     @GetMapping("/getProductCategory")
     public ResponseEntity<List<String>> getProductCategory(){
         return productService.getProductCategory();
     }
 
-    @Operation(summary = "Get subcategory for all available products", description = "Simple get operation")
+    @Operation(summary = "Subcategory list", description = "Pass the product category and get different sub-category list")
     @PostMapping("/getProductSubCategory")
     public ResponseEntity<List<String>> getProductSubCategory(@RequestParam("category") String category){
         return productService.getProductSubCategory(category);
     }
 
-    @Operation(summary = "Get product name and price", description = "Pass product subcategory and get product list")
+    @Operation(summary = "Product list", description = "Pass the product subcategory and get product list")
     @PostMapping("/getProducts")
     public ResponseEntity<List<Product>> getProducts(@RequestParam("subCategory") String subCategory){
         return productService.getProducts(subCategory);
