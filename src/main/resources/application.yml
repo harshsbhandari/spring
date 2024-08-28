@@ -17,9 +17,9 @@ app:
   key: "10"
 
   discountMap:
-    NEW_ARRIVALS: Sports
-    STOCK_CLEARING: Shoes
-    FESTIVE_SALE: Electronics
+    NEW_ARRIVALS: "Sports"
+    STOCK_CLEARING: "Shoes"
+    FESTIVE_SALE: "Electronics"
 
   productCategory:
 #    Category: SubCategory

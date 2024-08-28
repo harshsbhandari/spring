@@ -35,4 +35,9 @@ public class ProductController {
         return productService.getProducts(subCategory);
     }
 
+    @PostMapping("/getNewArrivals")
+    public ResponseEntity<List<Product>> getNewArrivals(){
+        return productService.getNewArrivals();
+    }
+
 }

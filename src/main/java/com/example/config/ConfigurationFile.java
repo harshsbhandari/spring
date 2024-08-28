@@ -23,6 +23,6 @@ public class ConfigurationFile {
 
     private Map<String, List<Product>> productMap;
 
-    private Map<DiscountType, String> discountMap;
+    private Map<DiscountType, List<String>> discountMap;
 
 }
