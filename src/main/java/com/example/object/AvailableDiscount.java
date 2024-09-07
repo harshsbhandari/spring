@@ -6,11 +6,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Discount {
+public class AvailableDiscount {
     DiscountType discountType;
-    String category;
+    List<String> category;
+    Integer discountPercentage;
+    List<String>noDiscountBrands;
 }

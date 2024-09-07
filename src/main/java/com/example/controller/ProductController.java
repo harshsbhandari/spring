@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 public class ProductController {
+
     @Autowired
     ProductService productService;
 
@@ -33,11 +34,6 @@ public class ProductController {
     @PostMapping("/getProducts")
     public ResponseEntity<List<Product>> getProducts(@RequestParam("subCategory") String subCategory){
         return productService.getProducts(subCategory);
-    }
-
-    @PostMapping("/getNewArrivals")
-    public ResponseEntity<List<Product>> getNewArrivals(){
-        return productService.getNewArrivals();
     }
 
 }

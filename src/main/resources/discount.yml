@@ -1,0 +1,13 @@
+app:
+  availableDiscountList:
+    - discountType: "NEW_ARRIVALS"   # This will map to DiscountType.NEW_ARRIVALS
+      category:
+        - "Electronics"
+        - "Sports"
+      discountPercentage: 10
+      noDiscountBrands:
+        - "Apple"
+        - "Nike"
+        - "Adidas"
+        - "Puma"
+        - "Sony"
