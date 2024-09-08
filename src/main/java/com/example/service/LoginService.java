@@ -2,7 +2,6 @@ package com.example.service;
 
 import com.example.config.ConfigurationFile;
 import lombok.extern.slf4j.Slf4j;
-import org.jasypt.util.text.AES256TextEncryptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;

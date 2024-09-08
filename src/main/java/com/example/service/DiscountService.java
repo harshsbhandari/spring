@@ -1,7 +1,6 @@
 package com.example.service;
 
 import com.example.config.DiscountConfigurationFile;
-import com.example.config.ProductConfigurationFile;
 import com.example.constants.DiscountType;
 import com.example.object.AvailableDiscount;
 import com.example.object.Product;
@@ -9,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -19,7 +17,7 @@ public class DiscountService {
     @Autowired
     DiscountConfigurationFile discountConfigurationFile;
     @Autowired
-    ProductConfigurationFile productConfigurationFile;
+    ProductService productService;
 
     public ResponseEntity<List<Product>> getNEW_ARRIVALS() {
         var availableDiscountList = discountConfigurationFile.getAvailableDiscountList();
@@ -28,8 +26,8 @@ public class DiscountService {
                 .findFirst().orElse(null);
         if(availableDiscount == null)
             return ResponseEntity.of(Optional.of(List.of()));
-        var productCategory = productConfigurationFile.getProductCategory();
-        var productMap = productConfigurationFile.getProductMap();
+        var productCategory = productService.getProductCategoryMap().getBody();
+        var productMap = productService.getProductMap().getBody();
         var subCategoryList = productCategory.keySet().stream().
                 filter(i -> availableDiscount.getCategory().contains(i)).toList();
 

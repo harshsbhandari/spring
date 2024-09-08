@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class ProductController {
@@ -34,6 +35,18 @@ public class ProductController {
     @PostMapping("/getProducts")
     public ResponseEntity<List<Product>> getProducts(@RequestParam("subCategory") String subCategory){
         return productService.getProducts(subCategory);
+    }
+
+    @Operation(summary = "Product Category Map", description = "Get whole map of product category and subcategory")
+    @GetMapping("/getProductCategoryMap")
+    public ResponseEntity<Map<String, List<String>>> getProductCategoryMap(){
+        return productService.getProductCategoryMap();
+    }
+
+    @Operation(summary = "Product Map", description = "Get whole product map")
+    @GetMapping("/getProductMap")
+    public ResponseEntity<Map<String, List<Product>>> getProductMap(){
+        return productService.getProductMap();
     }
 
 }
